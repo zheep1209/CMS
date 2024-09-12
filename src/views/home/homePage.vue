@@ -1,18 +1,18 @@
 <script setup>
-import Home from '@/views/home/home.vue'
-import img01 from '@/assets/imgs01/img01.jpg'
-import img02 from '@/assets/imgs01/img02.jpg'
-import img03 from '@/assets/imgs01/img03.jpg'
-import img04 from '@/assets/imgs01/img04.jpg'
-import img11 from '@/assets/imgs01/11.jpg'
-import b1 from '@/assets/imgs01/书签.png'
-import b2 from '@/assets/imgs01/书签2.png'
-import b3 from '@/assets/imgs01/回到顶部.png'
-import b4 from '@/assets/imgs01/二维码.png'
-import b5 from '@/assets/imgs01/二维码2.png'
-import b6 from '@/assets/imgs01/投稿.png'
-import b7 from '@/assets/imgs01/分享.png'
-import b8 from '@/assets/imgs01/分享2.png'
+import Home from '../../views/home/homePage.vue'
+import img01 from '../../assets/imgs01/img01.jpg'
+import img02 from '../../assets/imgs01/img02.jpg'
+import img03 from '../../assets/imgs01/img03.jpg'
+import img04 from '../../assets/imgs01/img04.jpg'
+import img11 from '../../assets/imgs01/11.jpg'
+import b1 from '../../assets/imgs01/书签.png'
+import b2 from '../../assets/imgs01/书签2.png'
+import b3 from '../../assets/imgs01/回到顶部.png'
+import b4 from '../../assets/imgs01/二维码.png'
+import b5 from '../../assets/imgs01/二维码2.png'
+import b6 from '../../assets/imgs01/投稿.png'
+import b7 from '../../assets/imgs01/分享.png'
+import b8 from '../../assets/imgs01/分享2.png'
 import { ref } from 'vue'
 
 const imgs = [
@@ -285,7 +285,7 @@ const hots = [
               <div class="content">
                 <div class="title">Leap Motion AR头显看起来很疯狂但可能是奇迹</div>
                 <div class="imgs">
-                  <img v-for="i in 4" class="img" :src="img11">
+                  <img v-for="index in 4" class="img" :src="img11" alt="">
                 </div>
                 <div class="content">林诺斯之神才把你铸就，
                   你是惩恶的短剑，自由的秘密卫士，
@@ -302,10 +302,10 @@ const hots = [
                   <div class="is">评论</div>
                   <div class="is">浏览</div>
                 </div>
-              </div>
+              </div>`
             </div>
-            <div class="card1" v-for="i in 7">
-              <img class="img" :src="img11">
+            <div class="card1" v-for="_ in 7">
+              <img class="img" :src="img11" alt="">
               <div class="text">
                 <div class="title" style="color: black;font-weight: normal">奥睿科ORICO HU3温室加湿器</div>
                 <div class="content">林诺斯之神才把你铸就，
@@ -443,7 +443,7 @@ const hots = [
     </el-footer>
   </el-container>
   <div class="qrcode" @mouseenter="enter2" @mouseleave="leave2" v-show="isShow">
-    <img src="@/assets/imgs01/qrcode.jpg" alt=""  width="100%">
+    <img src="@/assets/imgs01/qrcode.jpg" alt="" width="100%">
     <div class="tips">扫一扫(确信)</div>
   </div>
   <div class="ffx" @mouseenter="enter4" @mouseleave="leave4" v-show="isShow2">
@@ -457,9 +457,10 @@ const hots = [
       <img :src="qrcode" alt="" width="50px">
     </div>
     <div class="a2" :style="s2" @mouseenter="enter3" @mouseleave="leave3"><img :src=url2 alt=""
-                                                                               width="100%">{{ tips2 }}</div>
-    <div class="a3" style="text-align: center; " @mouseenter="enter4" @mouseleave="leave4"><img  :src=url3 alt=""
-                                                                   width="80%"></div>
+                                                                               width="100%">{{ tips2 }}
+    </div>
+    <div class="a3" style="text-align: center; " @mouseenter="enter4" @mouseleave="leave4"><img :src=url3 alt=""
+                                                                                                width="80%"></div>
     <div class="a4" :style="s1" @click="backTop" @mouseenter="enter1" @mouseleave="leave1"><img :src=url1 alt=""
                                                                                                 width="100%">{{ tips1 }}
     </div>
@@ -480,22 +481,25 @@ const hots = [
     background-color: #fff;
   }
 
-  .a1:hover,.a3:hover {
+  .a1:hover, .a3:hover {
     background-color: #007bff;
   }
 
 }
-.ffx{
+
+.ffx {
   background-color: #fff;
   margin-bottom: 10px;
   width: 50px;
   position: fixed;
   right: 16%;
   bottom: 0;
-  img{
+
+  img {
     width: 50px;
   }
 }
+
 .qrcode {
   width: 240px;
   height: 250px;
@@ -808,7 +812,6 @@ const hots = [
         background-color: #fff;
 
         .content {
-
           padding: 20px;
 
           a {
@@ -832,10 +835,6 @@ const hots = [
         display: flex;
         align-items: center;
         width: 1160px;
-
-        img {
-
-        }
 
         .text {
           display: flex;
